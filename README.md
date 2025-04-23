@@ -28,7 +28,7 @@ The SPBFS algorithm extends the problem addressed by the CG and ICG algorithms t
 Each hyperplane represents the collection of points where the pseudo-revenues of two products are equal.  The two open half-spaces defined by that hyperplane impose opposite, but fixed, pseudo-revenue orderings for this pair of product.  
 Therefore, every distinct pair of products defines one hyperplane, and an instance with $n$ products induces $O(n^{2})$ hyperplanes that partition the space into polyhedra.  Inside each polyhedron, the pseudo-revenues of all products have a unique total order.  Traversing all polyhedra therefore enumerates every ordering and, by extension, every candidate assortment.  To cope with the enormous number of polyhedra, our SPBFS implementation exploits Python’s `multiprocessing` package, enabling parallel processing of multiple polyhedra and thereby markedly shortening the computation time.
 
-## FW algorithm
+## Frank–Wolfe (FW) algorithm
 The FW algorithm in our paper is simply an application of the Frank–Wolfe algorithm in the assortment optimization setting. 
 Given any current assortment $\tilde{S}$, one can use Theorem 1 in our paper to linearize the objective function at the current solution by solving
 ```math
